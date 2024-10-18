@@ -1,9 +1,0 @@
-div{
-    display: flex;                /* Usando flexbox para centralização */
-    justify-content: center;      /* Centraliza horizontalmente */
-    align-items: center;          /* Centraliza verticalmente */
-    height: 100vh;                /* Altura da div ocupa toda a tela */
-    font-size: 3em;              /* Tamanho da fonte */
-    font-weight: bold;           /* Deixa o texto em negrito */
-    text-align: center;          /* Alinhamento do texto */
-}
