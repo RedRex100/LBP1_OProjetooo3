@@ -1,15 +1,27 @@
-from flask import Flask, render_template
-from models import Usuarios
+from flask import Flask, render_template, session, request, redirect, url_for
+from models.model import adicionar_usuario
+from models import cookies
+
 
 app = Flask(__name__)
+app.register_blueprint(login.c)
+app.secret_key = '1234'
 
-@app.route("/")
-def render1():
-    return render_template("pm.html")
+@app.before_request
+def b4_request():
+    if request.path == '/login':
+        return 
+    if not cookies.existe('nome'):
+        return redirect(url_for('login.login'))
 
-@app.route("/login")
-def render2():
-    return render_template("index.html")
+@app.after_request
+def a_request(response):
+    print("Depois da requisição")
+    return response
 
-if __name__ == "__main__":
+@app.route('/')
+def index():
+    return render_template('index.html', nome=cookies.get('nome'))
+
+if __name__ == '__main__':
     app.run(debug=True)
