@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrinho de Compras</title>
+</head>
+<body>
+    <h1>Escolha os Materiais</h1>
+    <form action="/adicionar" method="POST">
+        <div>
+            <label for="material">Escolha o material:</label>
+            <select id="material" name="material">
+                <option value="Cimento">Cimento - R$ 20,00 p/ un.</option>
+                <option value="Tijolo">Tijolo - R$ 10,00 p/ un.</option>
+                <option value="Cascalho">Cascalho - R$ 10,00 p/ un.</option>
+                <option value="Areia">Areia - R$ 5,00 p/ un.</option>
+                <option value="Tinta">Tinta - R$ 15,00 p/ cacho</option>
+            </select>
+            <br><br>
+            <label for="quantity">Quantidade:</label><br>
+            <input type="number" id="quantity" name="quantity" min="1" required>
+            <button type="submit">Adicionar ao carrinho</button>
+        </div>
+    </form>
+
+    <h2>Carrinho</h2>
+    <ul>
+        {% for item in carrinho %}
+            <li>{{ item.quantidade }} x {{ item.material }}</li>
+        {% endfor %}
+    </ul>
+
+    <h3>Total: R$ {{ total }}</h3>
+    
+    <div class="rodape">
+        <a href="/"> Voltar ao Início </a>
+    </div>
+</body>
+</html>

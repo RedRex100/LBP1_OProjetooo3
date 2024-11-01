@@ -1,0 +1,19 @@
+.principal {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 50%;
+    height: 500px;
+    text-align: center;
+    align-self: center;
+    position: absolute;
+    top: 50%; 
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+body { text-align: center; padding: 50px; }
+        h1 { font-size: 50px; }
+        body { font: 20px Helvetica, sans-serif; color: #333; }
+        .container { display: inline-block; margin-top: 20px; }
+        a { text-decoration: none; color: #007BFF; }
